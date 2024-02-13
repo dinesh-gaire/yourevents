@@ -1,0 +1,23 @@
+// The main purpose of making cached connection is to reuse the connection
+// If it isnot then we have to make connection each time we call the database
+
+import mongoose from 'mongoose';
+
+const MONGODB_URI = process.env.MONGODB_URI;
+
+let cached = (global as any).mongoose || {conn:null , promise:null} /*If we already dont have mongoose cached connection it sets to empty obj*/
+
+export const connectToDatabase = async() => {
+    if (cached.conn) return cached.conn;
+
+    if(!MONGODB_URI) throw new Error('MONGODB_URI is missing');
+
+    cached.promise = cached.promise || mongoose.connect(MONGODB_URI,{
+        dbName: 'yourevents',
+        bufferCommands: false,
+    })
+
+    cached.conn = await cached.promise;
+
+    return cached.conn;
+}
