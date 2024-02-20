@@ -119,6 +119,85 @@ Create lib/actions/user.actions.ts
 Create lib/database/models/category.model.ts
 Create lib/database/models/order.model.ts
 
+Update code in utils.ts -> Copy Paste
+
+Push code to github
+Create account in vercel and connect repository and deploy
+Go to webhooks in clerk dashboard and update url https://yourevents.vercel.app/api/webhook/clerk
+WEBHOOK_SECRET=whsec_CDIYr9/1YWwWTiDMKaxoEuLMVhE7tvzm -> Get webhook and add to env variable in vercel
+Signup the user then data added to database
+
+Create components/shared/EventForm.tsx
+Create (root)/events/[id]/update/page.tsx
+Create (root)/events/create/page.tsx
+
+npx shadcn-ui@latest add form
+Create lib/validator.ts to add form validation
+
+npx shadcn-ui@latest add select
+Create components/Dropdown.tsx
+
+npx shadcn-ui@latest add alert-dialog
+
+npx shadcn-ui@latest add textarea
+
+create components/FileUploader.tsx
+
+npm install react-datepicker --save
+
+npx shadcn-ui@latest add checkbox
+
+Create actions/category.actions.ts
+
+Create actions/event.actions.ts
+Customize seession token in clerk dashboard/ sessions by adding object having userId as key
+Update Event forms so that we can push the events to database
+
+Create (root)/events/[id]/page.tsx to display event information
+Update event.actions.ts
+Update next.config.mjs so that you can accept image from uploadthing
+
+Create components/shared/Collection.tsx
+Add Collection to Home page
+
+Create Card.tsx
+Add Card to Collection
+Create getEventById function in events.action.ts
+Create updateEvent function in events.action.ts
+
+Create deleteEvent function in events.action.ts
+Create DeleteConfirmation.tsx
+Add it to Card
+
+Update (root)/events/[id]/update/page.tsx
+Update EventForms 
+
+Update (root)/events/[id]/page.tsx to show related events
+
+Create (root)/profile/page.tsx
+
+Create CheckoutButton.tsx
+Create Checkout.tsx
+Add Stripe integration in Checkout.tsx
+update .env.local
+
+Create order.actions.ts
+
+Add stripe webhook to the application:
+Add endpoint url: https://yourevents.vercel.app/api/webhook/stripe
+Select event to listen to checkout.session.completed
+Copy the code
+Add endpoint
+Create app/api/webhooks/stripe/route.ts and paste the copied code
+Copy signing secret from stripe 
+
+
+
+
+
+
+
+
 
 
 
