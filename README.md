@@ -191,6 +191,15 @@ Add endpoint
 Create app/api/webhooks/stripe/route.ts and paste the copied code
 Copy signing secret from stripe 
 
+Update profile/page.tsx to display mytickets
+
+Create (root)/orders/page.tsx
+
+Create components/Search.tsx
+Create components/CategoryFilter.tsx
+Update both on home page
+
+
 
 
 
